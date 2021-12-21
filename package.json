@@ -18,10 +18,7 @@
         "react-scripts": "4.0.3"
     },
     "scripts": {
-        "start": "concurrently \"json-server -p 3500 -w db.json\" \"node app.js\"",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "start": "concurrently \"json-server -p 3500 -w db.json\" \"node app.js\""
     },
     "eslintConfig": {
         "extends": [
