@@ -1,7 +1,6 @@
 {
     "name": "learn-react",
     "version": "0.1.0",
-    "homepage": "https://joshlee1127.github.io/react_deploy_gh",
     "private": true,
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
@@ -19,8 +18,6 @@
         "react-scripts": "4.0.3"
     },
     "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
         "start": "concurrently \"json-server -p 3500 -w db.json\" \"node app.js\"",
         "build": "react-scripts build"
     },
@@ -41,8 +38,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "gh-pages": "^3.2.3"
     }
 }
