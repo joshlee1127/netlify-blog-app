@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 22px;
+}
+
+body {
+    min-width: 100vh;
+    font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+form {
+    width: 100%;
+}
+button {
+    width: 32%;
+    height: 40px;
+    size: 40px;
+    margin: 5px;
+}
+li {
+    background-color: aqua;
+    text-decoration: dashed;
+    color: black;
+    border: 1px solid rgb(156, 41, 41);
+    padding: 10px;
+}
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+/* .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid mediumblue;
+    margin: auto;
+} */
