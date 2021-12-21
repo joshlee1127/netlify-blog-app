@@ -15,7 +15,7 @@ import { useStoreActions } from "easy-peasy"
 const App = () => {
     const setPosts = useStoreActions((actions) => actions.setPosts)
     const { data, fetchError, isLoading } = useAxiosFetch(
-        "http://localhost:3500/posts"
+        "http://49.158.196.10:3500/posts"
     )
     useEffect(() => {
         setPosts(data)
