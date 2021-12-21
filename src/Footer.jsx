@@ -1,12 +1,11 @@
 import React from "react"
-import { useStoreState } from "easy-peasy"
-const Footer = () => {
-    const today = new Date()
-    const postCount = useStoreState((state) => state.postCount)
+
+const Footer = ({ length }) => {
+    // const today = new Date()
     return (
-        <footer className='Footer'>
+        <footer>
             <p>
-                Copyright &copy; {today.getFullYear()} | {postCount} Blog Posts
+                {length} List {length === 1 ? "item" : "items"}
             </p>
         </footer>
     )

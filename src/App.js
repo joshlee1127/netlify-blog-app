@@ -1,41 +1,75 @@
-import { Route, Switch } from "react-router-dom"
-
+import { useState, useEffect } from "react"
+import AddItem from "./AddItem"
 import Header from "./Header"
-import Nav from "./Nav"
+import Content from "./Content"
 import Footer from "./Footer"
-import Home from "./Home"
-import NewPost from "./NewPost"
-import EditPost from "./EditPost"
-import PostPage from "./PostPage"
-import About from "./About"
-import Missing from "./Missing"
-import { useEffect } from "react"
-import useAxiosFetch from "./hooks/useAxiosFetch"
-import { useStoreActions } from "easy-peasy"
-const App = () => {
-    const setPosts = useStoreActions((actions) => actions.setPosts)
-    const { data, fetchError, isLoading } = useAxiosFetch(
-        "http://49.158.196.10:3500/posts"
+import SearchItem from "./SearchItem"
+function App() {
+    const [items, setItems] = useState(
+        JSON.parse(localStorage.getItem("shoppingList")) || []
     )
+
+    const [newItem, setNewItem] = useState("")
+    const [search, setSearch] = useState("")
+
+    // 跟api溝通透過useEffect
     useEffect(() => {
-        setPosts(data)
-    }, [data, setPosts])
+        console.log("useEffect @ items change")
+        localStorage.setItem("shoppingList", JSON.stringify(items))
+    }, [items])
+
+    useEffect(() => {
+        console.log("useEffect @ every render")
+    })
+
+    useEffect(() => {
+        console.log("useEffect @ loading")
+    }, [])
+
+    const addItem = (item) => {
+        const id = items.length ? items[items.length - 1].id + 1 : 1
+        const myNewItem = { id, checked: false, item }
+        const listItems = [...items, myNewItem]
+        setItems(listItems)
+    }
+    const handleCheck = (id) => {
+        const listItems = items.map((item) =>
+            item.id === id ? { ...item, checked: !item.checked } : item
+        )
+        setItems(listItems)
+    }
+    const handleDelete = (id) => {
+        console.log(id)
+        const listItems = items.filter((item) => item.id !== id)
+        setItems(listItems)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (!newItem) return
+        addItem(newItem)
+        // addItem
+        setNewItem("")
+    }
     return (
         <div className='App'>
-            <Header title='JS Blog' />
-            <Nav />
-            <Switch>
-                <Route exact path='/'>
-                    <Home isLoading={isLoading} fetchError={fetchError} />
-                </Route>
-                <Route exact path='/post' component={NewPost} />
-                <Route path='/edit/:id' component={EditPost} />
-                <Route path='/post/:id' component={PostPage} />
-                <Route path='/about' component={About} />
-                <Route path='/*' component={Missing} />
-            </Switch>
+            <Header title='Groceries list' />
 
-            <Footer />
+            <AddItem
+                newItem={newItem}
+                setNewItem={setNewItem}
+                handleSubmit={handleSubmit}
+            />
+            <SearchItem search={search} setSearch={setSearch} />
+
+            <Content
+                items={items.filter((item) =>
+                    item.item.toLowerCase().includes(search.toLowerCase())
+                )}
+                setItems={setItems}
+                handleCheck={handleCheck}
+                handleDelete={handleDelete}
+            />
+            <Footer length={items.length} />
         </div>
     )
 }
