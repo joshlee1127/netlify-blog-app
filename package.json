@@ -1,6 +1,7 @@
 {
     "name": "learn-react",
     "version": "0.1.0",
+    "homepage": "https://joshlee1127.github.io/netlify-blog-app",
     "private": true,
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
