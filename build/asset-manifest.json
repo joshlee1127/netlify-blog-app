@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/netlify-blog-app/static/css/main.b04189a8.chunk.css",
+    "main.js": "/netlify-blog-app/static/js/main.bf0db89c.chunk.js",
+    "main.js.map": "/netlify-blog-app/static/js/main.bf0db89c.chunk.js.map",
+    "runtime-main.js": "/netlify-blog-app/static/js/runtime-main.a54a085e.js",
+    "runtime-main.js.map": "/netlify-blog-app/static/js/runtime-main.a54a085e.js.map",
+    "static/js/2.e00b5749.chunk.js": "/netlify-blog-app/static/js/2.e00b5749.chunk.js",
+    "static/js/2.e00b5749.chunk.js.map": "/netlify-blog-app/static/js/2.e00b5749.chunk.js.map",
+    "index.html": "/netlify-blog-app/index.html",
+    "static/css/main.b04189a8.chunk.css.map": "/netlify-blog-app/static/css/main.b04189a8.chunk.css.map",
+    "static/js/2.e00b5749.chunk.js.LICENSE.txt": "/netlify-blog-app/static/js/2.e00b5749.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a54a085e.js",
+    "static/js/2.e00b5749.chunk.js",
+    "static/css/main.b04189a8.chunk.css",
+    "static/js/main.bf0db89c.chunk.js"
+  ]
+}
